@@ -1,4 +1,3 @@
-FROM openjdk:9
-ADD target/shopping-cart-0.0.1-SNAPSHOT.war shopping-cart-0.0.1-SNAPSHOT.war
-ENTRYPOINT ["java","shopping-cart-0.0.1-SNAPSHOT.war"]
-EXPOSE 8080
+FROM tomcat:7
+ADD target/shopping-cart-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
+CMD ["catalina.sh", "run"]
